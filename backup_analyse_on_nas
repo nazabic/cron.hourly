@@ -1,0 +1,5 @@
+#!/bin/bash
+
+/usr/bin/rsync -rvP /data/Diana/analyse /mnt/diana_nas  --exclude=lost+found --exclude="*.db-journal" --exclude="*.zip" --exclude="*.db.*"
+
+/usr/bin/rsync -rvP  /data/Diana/experiments /mnt/diana_nas --exclude=lost+found --exclude="*.db-journal" --exclude="*.zip" --exclude="*.db.*"

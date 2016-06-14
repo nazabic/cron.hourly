@@ -1,8 +1,9 @@
 #!/bin/bash
 
-find /data/Diana/rsync_data_node/ethoscope_videos -name '2016-*' -type d -exec bash -c 'cd '{}' && pwd && set -e && 
+find /data/Diana/data_node/ethoscope_videos -name '2016-*' -type d -exec bash -c 'cd '{}' && pwd && set -e && 
 if [ $(find . -name '*.mp4' | wc -l) -eq 0 ]; then 
-    TMP_FILE=chunks.tmp &&                                                              echo Merging 0 h264 chunks in tmp file &&
+    TMP_FILE=chunks.tmp &&   
+    echo Merging 0 h264 chunks in tmp file &&
     cat  *.h264  > chunks.tmp &&
     fps=25 &&
     prefix="whole_$(ls *.h264 | head -n 1 | cut -d . -f 1)" &&
